@@ -73,7 +73,7 @@ When a client makes a GET request to /api/cowsay it should send JSON that includ
 A response for a valid Requests should have a status code of 200 and the JSON body
 ``` json
 {
-  "content": "<<cowsay cow saying the message in the query string>"
+  "content": "<cowsay cow saying the message in the query string>"
 }
 ```
 
