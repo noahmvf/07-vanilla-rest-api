@@ -28,7 +28,7 @@ For this assignment you will be building a HTTP server.
 #### Server Module
 The server module is responsible for creating an http server defining all route behavior and exporting an interface for starting and stoping the server. It should export an object with `start` and `stop` methods. The start and stop methods should each return a promise that resolves on success and rejects on error.
 ###### GET /
-When a client makes a GET request to / the server should send baack html with a project description and a anchor to /cowsay.
+When a client makes a GET request to / the server should send back html with a project description and a anchor to /cowsay.
 ``` html
 <!DOCTYPE html>
 <html>
@@ -93,6 +93,9 @@ When a client makes a POST request to /api/cowsay it should send JSON that inclu
 | With out text property on the body | 400 | JSON | `{"error": "invalid request: text query required"}` |
 | With text query | 200 | JSON | `{"content": "<cowsay cow text>"}` |
 
+## Tests
+* Write tests for your `POST /api/cowsay route`, `GET /api/cowsay?text={message} route`, and one more route of your choice. Write at least **two** test assertions for each route. 
+* Your `POST /api/cowsay route` and your `GET /api/cowsay?text={message} route` should include tests that check for 400 errors on a bad request. 
 
 ## HTTPie commands
 * `http GET :3000/pathname text=="judy vue"`
