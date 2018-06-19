@@ -96,7 +96,7 @@ When a client makes a POST request to /api/cowsay it should send JSON that inclu
 
 ## HTTPie commands
 * `http GET :3000/pathname text=="judy vue"`
-* `http GET :3000/pathname?text=hello
+* `http GET :3000/pathname?text=hello`
 * `http :3000/pathname?text=hello **defaults to a GET request when no verb is put in**`
 * `http POST :3000/pathname name=vincio`
 
