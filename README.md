@@ -4,6 +4,7 @@
 ## Submission Instructions
 * Work in a fork of this repository
 * Work in a branch on your fork
+* Set up Travis CI on your forked repo
 * Open a pull request to your master branch.
 * Submit on canvas a question and observation, how long you spent, and a link to your pull request
 
@@ -12,7 +13,7 @@ Configure the root of your repository with the following files and directories. 
 * **README.md** - contains documentation
 * **.env** - contains env variables (should be git ignored)
 * **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file
-* **.eslintrc** - contains the course linter configuration
+* **.eslintrc.json** - contains the course linter configuration
 * **.eslintignore** - contains the course linter ignore configuration
 * **package.json** - contains npm package config
   * create a `lint` script for running eslint
@@ -49,7 +50,7 @@ When a client makes a GET request to / the server should send baack html with a 
 </html>
 ```
 
-###### GET /cowsay?text={message}
+###### GET /welcome/cowsay?text={message}
 When a client makes a GET request to /cowsay?text={message} the server should parse the querystring for a text key. It should then send a rendered HTML page with a cowsay cow speaking the value of the text query. If their is no text query the cow message should be a random string taken from the `Faker` package.
 ``` html
 <!DOCTYPE html>
@@ -58,7 +59,7 @@ When a client makes a GET request to /cowsay?text={message} the server should pa
     <title> cowsay </title>
   </head>
   <body>
-    <h1> cowsay </h1>
+    <h1> Welcome to Cowsay! </h1>
     <pre>
       <!-- cowsay.say({text: req.query.text}) -->
     </pre>
@@ -67,12 +68,12 @@ When a client makes a GET request to /cowsay?text={message} the server should pa
 ```
 
 ###### GET /api/cowsay?text={message}
-When a client makes a GET request to /api/cowsay it should send JSON that includes `{"text": "<message>"}`. The server should respond with a JSON body `{"content": "<cowsay cow saying the sent text>"}`.
+When a client makes a GET request to /api/cowsay it should send JSON that includes `{"text": "<message>"}`. The server should respond with a JSON body `{"content": "<cowsay cow saying the message in the query string>"}`.
 
 A response for a valid Requests should have a status code of 200 and the JSON body
 ``` json
 {
-  "content": "<cowsay cow text>"
+  "content": "<<cowsay cow saying the message in the query string>"
 }
 ```
 
@@ -84,7 +85,7 @@ A response for a invalid Requests should have a status code of 400 and the JSON 
 ```
 
 ###### POST /api/cowsay
-When a client makes a POST request to /api/cowsay it should send JSON that includes `{"text": "<message>"}`. The server should respond with a JSON body `{"content": "<cowsay cow>"}`.
+When a client makes a POST request to /api/cowsay it should send JSON that includes `{"text": "<message>"}`. The server should respond with a JSON body `{"content": "<cowsay cow saying the posted message>"}`.
 
 | Request | Response Status Code | Response Type | Response Body |
 | -- | -- | -- | -- |
@@ -95,6 +96,8 @@ When a client makes a POST request to /api/cowsay it should send JSON that inclu
 
 ## HTTPie commands
 * `http GET :3000/pathname text=="judy vue"`
+* `http GET :3000/pathname?text=hello
+* `http :3000/pathname?text=hello **defaults to a GET request when no verb is put in**`
 * `http POST :3000/pathname name=vincio`
 
 
