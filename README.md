@@ -103,10 +103,14 @@ When a client makes a POST request to /api/cowsay it should send JSON that inclu
 * `http :3000/pathname?text=hello **defaults to a GET request when no verb is put in**`
 * `http POST :3000/pathname name=vincio`
 
-
-## Cow Variatons
+## Stretch Goals
+### Cow Variatons
  * Design and implement a feature to change the cowfile on GET /cowsay, GET /api/cowsay, and POST /api/cowsay - **ex: dragon, sheep, etc**
    * You can find the different type of animals cowsay supports at https://github.com/piuccio/cowsay/tree/master/cows
-* This is a design task. You neeed decide how to change your code structure implement the feature.
+* This is a design task. You neeed decide how to change your code structure in order to implement the feature.
+### Read HTML from a File
+ * Use the `fs` module to read from an index.html file in your project instead of hardcoding HTML into your server module. 
+### Make More Routes!
+ * Create more routes as you see fit. 
 
 
