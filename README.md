@@ -103,6 +103,9 @@ When a client makes a POST request to /api/cowsay it should send JSON that inclu
 * `http :3000/pathname?text=hello **defaults to a GET request when no verb is put in**`
 * `http POST :3000/pathname name=vincio`
 
+## Documentation
+Add your Travis badge to to the top of your README.md. Tell a user how to use your API. List out the routes you have registered and explain the RESTful verbs a user must use to get a valid response. Explain what is received when a valid request is made and what is received when an invalid request is made. 
+
 ## Stretch Goals
 ### Cow Variatons
  * Design and implement a feature to change the cowfile on GET /cowsay, GET /api/cowsay, and POST /api/cowsay - **ex: dragon, sheep, etc**
