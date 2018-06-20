@@ -1,7 +1,7 @@
 'use strict';
 
 const url = require('url');
-cosnt queryString = require('querystring');
+const queryString = require('querystring');
 
 module.exports = function bodyParser(req) {
   return new Promise((resolve, reject) => {
